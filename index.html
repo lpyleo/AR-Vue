@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="height=1, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes," />
+  <!--下载并运行AR.js-->
+  <script src="./static/js/aframe-master.min.js"></script>
+  <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="/static/js/aframe-ar-nft.js"></script>
+  <!-- <script src="./static/js/aframe-ar.js"></script> -->
+  <title>Vite App</title>
+  <style>
+    .btn1 {
+      position: absolute;
+      top: 40%;
+      left: 60%;
+      z-index: 999;
+      background-color: #bfa;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      line-height: 50px;
+      color: #ffffff;
+      font-size: 18px;
+      border-radius: 50%;
+      text-align: center;
+      background-image: linear-gradient(to right, #0073ff 0%, #0292eb 25%, #0475ff 50%, #0296eb 75%, #0055ff 100%);
+      background-size: 200%;
+      animation: colorGradient 1.5s infinite;
+    }
+
+    .btn2 {
+      position: absolute;
+      top: 40%;
+      left: 80%;
+      z-index: 999;
+      background-color: #bfa;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      line-height: 50px;
+      color: #ffffff;
+      font-size: 18px;
+      border-radius: 50%;
+      text-align: center;
+      background-image: linear-gradient(to right, #0073ff 0%, #0292eb 25%, #0475ff 50%, #0296eb 75%, #0055ff 100%);
+      background-size: 200%;
+      animation: colorGradient 1.5s infinite;
+    }
+
+    .btn3 {
+      position: absolute;
+      top: 55%;
+      left: 60%;
+      z-index: 999;
+      background-color: #bfa;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      line-height: 50px;
+      color: #ffffff;
+      font-size: 18px;
+      border-radius: 50%;
+      text-align: center;
+      background-image: linear-gradient(to right, #0073ff 0%, #0292eb 25%, #0475ff 50%, #0296eb 75%, #0055ff 100%);
+      background-size: 200%;
+      animation: colorGradient 1.5s infinite;
+    }
+
+    .btn4 {
+      position: absolute;
+      top: 55%;
+      left: 80%;
+      z-index: 999;
+      background-color: #bfa;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      line-height: 50px;
+      color: #ffffff;
+      font-size: 18px;
+      border-radius: 50%;
+      text-align: center;
+      background-image: linear-gradient(to right, #0073ff 0%, #0292eb 25%, #0475ff 50%, #0296eb 75%, #0055ff 100%);
+      background-size: 200%;
+      animation: colorGradient 1.5s infinite;
+    }
+
+    .btn5 {
+      position: absolute;
+      top: 70%;
+      left: 60%;
+      z-index: 999;
+      background-color: #bfa;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      line-height: 50px;
+      color: #ffffff;
+      font-size: 18px;
+      border-radius: 50%;
+      text-align: center;
+      background-image: linear-gradient(to right, #0073ff 0%, #0292eb 25%, #0475ff 50%, #0296eb 75%, #0055ff 100%);
+      background-size: 200%;
+      animation: colorGradient 1.5s infinite;
+    }
+
+    .btn6 {
+      position: absolute;
+      top: 70%;
+      left: 80%;
+      z-index: 999;
+      background-color: #bfa;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      line-height: 50px;
+      color: #ffffff;
+      font-size: 18px;
+      border-radius: 50%;
+      text-align: center;
+      background-image: linear-gradient(to right, #0073ff 0%, #0292eb 25%, #0475ff 50%, #0296eb 75%, #0055ff 100%);
+      background-size: 200%;
+      animation: colorGradient 1.5s infinite;
+    }
+
+    .btn7 {
+      position: absolute;
+      top: 85%;
+      left: 60%;
+      z-index: 999;
+      background-color: #bfa;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      line-height: 50px;
+      color: #ffffff;
+      font-size: 18px;
+      border-radius: 50%;
+      text-align: center;
+      background-image: linear-gradient(to right, #0073ff 0%, #0292eb 25%, #0475ff 50%, #0296eb 75%, #0055ff 100%);
+      background-size: 200%;
+      animation: colorGradient 1.5s infinite;
+    }
+
+    .btn8 {
+      position: absolute;
+      top: 85%;
+      left: 80%;
+      z-index: 999;
+      background-color: #bfa;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      line-height: 50px;
+      color: #ffffff;
+      font-size: 18px;
+      border-radius: 50%;
+      text-align: center;
+      background-image: linear-gradient(to right, #0073ff 0%, #0292eb 25%, #0475ff 50%, #0296eb 75%, #0055ff 100%);
+      background-size: 200%;
+      animation: colorGradient 1.5s infinite;
+    }
+
+    @keyframes colorGradient {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 100% 0;
+      }
+    }
+  </style>
+  <script>
+    let scale = 2
+    let X = 0
+    let Y = 0
+    let Z = 0
+    function bigger() {
+      let test = document.getElementById('test')
+      scale += 1;
+      test.innerHTML = "<a-entity position='100 0 0' scale='" + scale + " " + scale + " " + scale + "' rotation='" + X + " " + Y + " " + Z + "' gltf-model='/static/gltf/tomato/scene.gltf'></a-entity>"
+    }
+    function smaller() {
+      let test = document.getElementById('test')
+      scale -= 1;
+      test.innerHTML = "<a-entity position='100 0 0' scale='" + scale + " " + scale + " " + scale + "' rotation='" + X + " " + Y + " " + Z + "' gltf-model='/static/gltf/tomato/scene.gltf'></a-entity>"
+    }
+    function subX() {
+      let test = document.getElementById('test')
+      X -= 5;
+      test.innerHTML = "<a-entity position='100 0 0' scale='" + scale + " " + scale + " " + scale + "' rotation='" + X + " " + Y + " " + Z + "' gltf-model='/static/gltf/tomato/scene.gltf'></a-entity>"
+    }
+    function addX() {
+      let test = document.getElementById('test')
+      X += 5;
+      test.innerHTML = "<a-entity position='100 0 0' scale='" + scale + " " + scale + " " + scale + "' rotation='" + X + " " + Y + " " + Z + "' gltf-model='/static/gltf/tomato/scene.gltf'></a-entity>"
+    }
+    function subY() {
+      let test = document.getElementById('test')
+      Y -= 5;
+      test.innerHTML = "<a-entity position='100 0 0' scale='" + scale + " " + scale + " " + scale + "' rotation='" + X + " " + Y + " " + Z + "' gltf-model='/static/gltf/tomato/scene.gltf'></a-entity>"
+    }
+    function addY() {
+      let test = document.getElementById('test')
+      Y += 5;
+      test.innerHTML = "<a-entity position='100 0 0' scale='" + scale + " " + scale + " " + scale + "' rotation='" + X + " " + Y + " " + Z + "' gltf-model='/static/gltf/tomato/scene.gltf'></a-entity>"
+    }
+    function subZ() {
+      let test = document.getElementById('test')
+      Z -= 5;
+      test.innerHTML = "<a-entity position='100 0 0' scale='" + scale + " " + scale + " " + scale + "' rotation='" + X + " " + Y + " " + Z + "' gltf-model='/static/gltf/tomato/scene.gltf'></a-entity>"
+    }
+    function addZ() {
+      let test = document.getElementById('test')
+      Z += 5;
+      test.innerHTML = "<a-entity position='100 0 0' scale='" + scale + " " + scale + " " + scale + "' rotation='" + X + " " + Y + " " + Z + "' gltf-model='/static/gltf/tomato/scene.gltf'></a-entity>"
+    }
+  </script>
+</head>
+<style>
+  .arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+  }
+</style>
+
+<body style="margin : 0px; overflow: hidden;">
+  <!-- <div id="app"></div>
+    <script type="module" src="/src/main.js"></script> -->
+  <!--在图像描述符加载前显示 loading，根据设备的计算力，加载可能需要一点时间。-->
+  <div class="arjs-loader">
+    <div>请稍等，资源正在加载中...</div>
+  </div>
+  <a-scene vr-mode-ui="enabled: false;" embedded arjs="trackingMethod: best;debugUIEnabled: false;">
+    <!-- we use cors proxy to avoid cross-origin problems -->
+    <a-assets>
+      <video src="/static/video/example_video.mp4" preload="auto" id="vid" response-type="arraybuffer" loop crossorigin
+        webkit-playsinline muted playsinline>
+      </video>
+    </a-assets>
+
+    <a-nft id="test" type="nft" url="/static/nft/tomato/R-C" smooth="true" smoothCount="10" smoothTolerance="0.02"
+      smoothThreshold="5">
+      <a-entity gltf-model="/static/gltf/tomato/scene.gltf" position="100 0 0" scale="2 2 2" rotation="0 0 0">
+      </a-entity>
+    </a-nft>
+    <a-nft videohandler type='nft' url='/static/nft/tom/tom' smooth="true" smoothCount="5" smoothTolerance="0.01"
+      smoothThreshold="2">
+      <a-video src="#vid" position='100 0 0' rotation='90 0 180' width='500' height='250'>
+      </a-video>
+    </a-nft>
+
+    <!-- <a-marker videohandler preset="hiro">
+      <a-video src="#vid" position='50 150 0' rotation='90 0 180' width='50' height='25'>
+      </a-video>
+    </a-marker>
+    <a-marker id="test" preset='custom' type='pattern' url='static/pattern/A.patt'>
+      <a-entity
+      position="0 0.5 0"
+      scale="0.05 0.05 0.05"
+      rotation="45 90 0"
+      gltf-model="static/gltf/bucket/scene.gltf"
+      ></a-entity>
+    </a-marker> -->
+
+
+    <a-entity camera></a-entity>
+  </a-scene>
+  <button class="btn1" onclick="smaller()">S-</button>
+  <button class="btn2" onclick="bigger()">S+</button>
+  <button class="btn3" onclick="subX()">X-</button>
+  <button class="btn4" onclick="addX()">X+</button>
+  <button class="btn5" onclick="subY()">Y-</button>
+  <button class="btn6" onclick="addY()">Y+</button>
+  <button class="btn7" onclick="subZ()">Z-</button>
+  <button class="btn8" onclick="addZ()">Z+</button>
+  <script>
+    window.onload = function () {
+      AFRAME.registerComponent('videohandler', {
+        init: function () {
+          var marker = this.el;
+
+          this.vid = document.querySelector("#vid");
+
+          marker.addEventListener('markerFound', function () {
+            // 识别到标识图，开始播放视频
+            this.vid.play();
+          }.bind(this));
+
+          marker.addEventListener('markerLost', function () {
+            // 丢失标识图，停止播放视频
+            this.vid.pause();
+            this.vid.currentTime = 0;
+          }.bind(this));
+        }
+      });
+    };
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Tomato Plant
+* source:	https://sketchfab.com/3d-models/tomato-plant-e0b559690e384fc0a9f3a05913f609c4
+* author:	zvanstone (https://sketchfab.com/zvanstone)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Tomato Plant" (https://sketchfab.com/3d-models/tomato-plant-e0b559690e384fc0a9f3a05913f609c4) by zvanstone (https://sketchfab.com/zvanstone) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Plastic Jerrycan
+* source:	https://sketchfab.com/3d-models/plastic-jerrycan-071ee7fa1d4548aba415b0558a5379ed
+* author:	Alexander Komendant (SashaRX) (https://sketchfab.com/sk9542)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Plastic Jerrycan" (https://sketchfab.com/3d-models/plastic-jerrycan-071ee7fa1d4548aba415b0558a5379ed) by Alexander Komendant (SashaRX) (https://sketchfab.com/sk9542) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
